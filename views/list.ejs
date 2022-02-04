@@ -5,6 +5,7 @@
 <span class="bg-2"></span>
 
 <section class="container">
+    <span class="quick_fix-bg"></span>
     <div class="title_section">
         <h1>TODO</h1>
 
@@ -20,22 +21,25 @@
 
     <div class="todo_container">
         <div class="todo_list">
-            <form class="item">
-                <input class="checkbox_btn" type="checkbox"></input>
-                <p>Lorem ipsum dolor sit</p>
-                <img src="/images/icon-cross.svg" alt="cross" class="cross">
-            </form>
-            <span class="br_line"></span>
+            <% itemList.forEach(item => { %>
+                <form class="item" action="/delete" method="post">
+                    <input class="checkbox_btn" type="checkbox">
+                    <p><%= item.name %></p>
+                    <input type="image" src="/images/icon-cross.svg" class="cross" onclick="this.form.submit()">
+                    <input type="hidden" name="deleteItem" value="<%= item._id %>">
+                </form>
+                <span class="br_line"></span>
+            <% }) %>
         </div>
 
         <div class="shortcut">
-            <p class="item_counter">5 items left</p>
+            <p class="item_counter"><%= itemList.length %> items left</p>
             <p class="empty_completed_list">Clear Completed</p>
         </div>
     </div>
 
     <div class="user_selection">
-        <a href="/all" class="full_list">All</a>
+        <a href="/" class="full_list">All</a>
         <a href="/active" class="active_list">Active</a>
         <a href="/completed" class="completed_list">Completed</a>
     </div>
