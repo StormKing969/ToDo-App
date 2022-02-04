@@ -6,20 +6,41 @@
 
 <section class="container">
     <div class="title_section">
-        <h1>TO DO</h1>
+        <h1>TODO</h1>
 
         <img src="/images/icon-sun.svg" alt="sun icon">
     </div>
 
     <div class="user_input">
-        <form action="/" method="post">
-            <input type="text" name="newItem" placeholder="Create a new todo" autocomplete="off">
+        <form action="/" method="post" class="input_form">
+            <input class="input_location" type="text" name="newItem" placeholder="Create a new todo..." autocomplete="off">
+            <button class="btn_submit" type="submit"></button>
         </form>
     </div>
 
-    <div class="todo_list">
+    <div class="todo_container">
+        <div class="todo_list">
+            <form class="item">
+                <input class="checkbox_btn" type="checkbox"></input>
+                <p>Lorem ipsum dolor sit</p>
+                <img src="/images/icon-cross.svg" alt="cross" class="cross">
+            </form>
+            <span class="br_line"></span>
+        </div>
 
+        <div class="shortcut">
+            <p class="item_counter">5 items left</p>
+            <p class="empty_completed_list">Clear Completed</p>
+        </div>
     </div>
+
+    <div class="user_selection">
+        <a href="/all" class="full_list">All</a>
+        <a href="/active" class="active_list">Active</a>
+        <a href="/completed" class="completed_list">Completed</a>
+    </div>
+
+    <p class="direction">Drag and drop to reorder list</p>
 </section>
 
 <!-- Import the footer section -->

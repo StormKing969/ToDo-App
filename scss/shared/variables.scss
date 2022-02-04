@@ -22,13 +22,13 @@ $very-dark-grayish-blue: hsl(235, 19%, 35%);
 
 // ======= Dark Theme =======
 
-$very-dark-blue: hsl(235, 21%, 11%);
-$very-dark0desaturated-blue: hsl(235, 24%, 19%);
-$light-grayish-blue: hsl(234, 39%, 85%);
-$light-grayish-blue-hover : hsl(236, 33%, 92%); // ====== hover ======
-$dark-grayish-blue: hsl(234, 11%, 52%);
-$very-dark-grayish-blue-1: hsl(233, 14%, 35%);
-$very-dark-grayish-blue-2: hsl(237, 14%, 26%);
+$very-dark-blue: hsl(235, 21%, 11%); // body-bg
+$very-dark0desaturated-blue: hsl(235, 24%, 19%); // template-bg
+$light-grayish-blue: hsl(234, 39%, 85%); // text-color
+$light-grayish-blue-hover : hsl(236, 33%, 92%); // text-color-hover
+$dark-grayish-blue: hsl(234, 11%, 52%); // text-color-checked
+$very-dark-grayish-blue-1: hsl(233, 14%, 35%); // btn-color
+$very-dark-grayish-blue-2: hsl(237, 14%, 26%); // cross-btn-color
 
 // ============== Typography ==============
 
