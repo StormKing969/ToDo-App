@@ -123,7 +123,6 @@ body {
 }
 
 .user_input .input_form .input_location {
-  width: 75%;
   border: none;
   background: #25273c;
   color: #cacde8;
@@ -135,7 +134,7 @@ body {
   height: 1.3rem;
   border-radius: 50%;
   border: 0.1rem solid #4d5066;
-  margin: 0 .8rem 0 1rem;
+  margin: 0 .8rem 0 1.5rem;
   background: #25273c;
 }
 

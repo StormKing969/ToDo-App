@@ -84,7 +84,6 @@ body {
         flex-direction: row-reverse;
         
         .input_location {
-            width: 75%;
             border: none;
             background: $very-dark0desaturated-blue;
             color: $light-grayish-blue;
@@ -96,7 +95,7 @@ body {
             height: 1.3rem;
             border-radius: 50%;
             border: 0.1rem solid $very-dark-grayish-blue-1;
-            margin: 0 .8rem 0 1rem;
+            margin: 0 .8rem 0 1.5rem;
             background: $very-dark0desaturated-blue;
         }
     }
