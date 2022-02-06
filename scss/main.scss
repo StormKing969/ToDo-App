@@ -117,48 +117,58 @@ body {
         width: 100%;
 
         .item {
-            display: inline-flex;
-            flex-direction: row;
-            color: $light-grayish-blue;
-            width: 100%;
-            justify-content: space-evenly;
-            margin-top: .5rem;
+            // cursor: move;
+            cursor: pointer;
 
-            input:checked + p {
-                text-decoration: line-through;
-                text-decoration-color: $dark-grayish-blue;
-                color: $dark-grayish-blue;
+            .over {
+                border: 3px dotted #666;
+            }
+        
+            form {
+                display: inline-flex;
+                flex-direction: row;
+                color: $light-grayish-blue;
+                width: 100%;
+                justify-content: space-evenly;
+                margin-top: .5rem;
+
+                input:checked + p {
+                    text-decoration: line-through;
+                    text-decoration-color: $dark-grayish-blue;
+                    color: $dark-grayish-blue;
+                }
+
+                .checkbox_btn {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    border-radius: 50%;
+                    margin: 1rem 1rem 1rem 1.2rem;
+                    border: 0.1rem solid $very-dark-grayish-blue-1;
+                    background: $very-dark0desaturated-blue;
+                    align-self: center;
+                }
+    
+                p {
+                    padding: 1rem 1rem 1rem 0;
+                    align-self: center;
+                    width: 75%;
+                }
+    
+                .cross {
+                    width: .8rem;
+                    height: .8rem;
+                    align-self: center;
+                    margin-right: 1rem;
+                }
             }
 
-            .checkbox_btn {
-                width: 1.2rem;
-                height: 1.2rem;
-                border-radius: 50%;
-                margin: 1rem 1rem 1rem 1.2rem;
-                border: 0.1rem solid $very-dark-grayish-blue-1;
-                background: $very-dark0desaturated-blue;
-                align-self: center;
-            }
-
-            p {
-                padding: 1rem 1rem 1rem 0;
-                align-self: center;
-                width: 75%;
-            }
-
-            .cross {
-                width: .8rem;
-                height: .8rem;
-                align-self: center;
-                margin-right: 1rem;
+            .br_line {
+                display: inline-block;
+                width: 100%;
+                border: .1rem solid $very-dark-grayish-blue-1;
             }
         }
 
-        .br_line {
-            display: inline-block;
-            width: 100%;
-            border: .1rem solid $very-dark-grayish-blue-1;
-        }
     }
 
     .shortcut {

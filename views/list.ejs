@@ -9,7 +9,7 @@
     <div class="title_section">
         <h1>TODO</h1>
 
-        <img src="/images/icon-sun.svg" alt="sun icon">
+        <img src="/images/icon-sun.svg" alt="sun icon" id="icon">
     </div>
 
     <div class="user_input">
@@ -22,13 +22,15 @@
     <div class="todo_container">
         <div class="todo_list">
             <% itemList.forEach(item => { %>
-                <form class="item" action="/delete" method="post">
-                    <input class="checkbox_btn" type="checkbox">
-                    <p><%= item.name %></p>
-                    <input type="image" src="/images/icon-cross.svg" class="cross" onclick="this.form.submit()">
-                    <input type="hidden" name="deleteItem" value="<%= item._id %>">
-                </form>
-                <span class="br_line"></span>
+                <div class="item" draggable="true">
+                    <form action="/delete" method="post">
+                        <input class="checkbox_btn" type="checkbox">
+                        <p><%= item.name %></p>
+                        <input type="image" src="/images/icon-cross.svg" class="cross" onclick="this.form.submit()">
+                        <input type="hidden" name="deleteItem" value="<%= item._id %>">
+                    </form>
+                    <span class="br_line"></span>
+                </div>
             <% }) %>
         </div>
 

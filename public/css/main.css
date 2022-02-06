@@ -166,6 +166,14 @@ body {
 }
 
 .todo_container .todo_list .item {
+  cursor: pointer;
+}
+
+.todo_container .todo_list .item .over {
+  border: 3px dotted #666;
+}
+
+.todo_container .todo_list .item form {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -181,14 +189,14 @@ body {
   margin-top: .5rem;
 }
 
-.todo_container .todo_list .item input:checked + p {
+.todo_container .todo_list .item form input:checked + p {
   text-decoration: line-through;
   -webkit-text-decoration-color: #777a92;
           text-decoration-color: #777a92;
   color: #777a92;
 }
 
-.todo_container .todo_list .item .checkbox_btn {
+.todo_container .todo_list .item form .checkbox_btn {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 50%;
@@ -200,7 +208,7 @@ body {
       align-self: center;
 }
 
-.todo_container .todo_list .item p {
+.todo_container .todo_list .item form p {
   padding: 1rem 1rem 1rem 0;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -208,7 +216,7 @@ body {
   width: 75%;
 }
 
-.todo_container .todo_list .item .cross {
+.todo_container .todo_list .item form .cross {
   width: .8rem;
   height: .8rem;
   -ms-flex-item-align: center;
@@ -217,7 +225,7 @@ body {
   margin-right: 1rem;
 }
 
-.todo_container .todo_list .br_line {
+.todo_container .todo_list .item .br_line {
   display: inline-block;
   width: 100%;
   border: 0.1rem solid #4d5066;
