@@ -1,4 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+.container .user_input-th2 {
+  background-color: #fafafa;
+}
+
+.container .user_input-th2 .input_form .input_location {
+  background-color: #fafafa;
+  color: #777a92;
+}
+
+.container .user_input-th2 .input_form .btn_submit {
+  border: 0.1rem solid #cacde8;
+  background-color: #fafafa;
+}
+
+.container .todo_container-th2 {
+  background-color: #fafafa;
+  -webkit-box-shadow: 0px 10px 5px 0px #c0baba;
+          box-shadow: 0px 10px 5px 0px #c0baba;
+}
+
+.container .todo_container-th2 .todo_list .item .br_line {
+  border: 0.1rem solid #e4e5f1;
+}
+
+.container .todo_container-th2 .shortcut p {
+  color: #cacde8;
+}
+
+.container .user_selection-th2 {
+  background-color: #fafafa;
+  -webkit-box-shadow: 0px 10px 5px 0px #c0baba;
+          box-shadow: 0px 10px 5px 0px #c0baba;
+}
+
+.container .user_selection-th2 a {
+  color: #cacde8;
+}
+
+.container .direction-th2 {
+  color: #cacde8;
+  font-weight: 700;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;

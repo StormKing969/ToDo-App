@@ -1,0 +1,57 @@
+.container {
+
+    .user_input-th2 {
+        background-color: $very-light-gray;
+
+        .input_form {
+
+            .input_location {
+                background-color: $very-light-gray;
+                color: $dark-grayish-blue;
+            }
+
+            .btn_submit {
+                border: 0.1rem solid $light-grayish-blue;
+                background-color: $very-light-gray;
+            }
+        }
+    }
+
+    .todo_container-th2 {
+        background-color: $very-light-gray;
+        box-shadow: 0px 10px 5px 0px #c0baba;
+
+        .todo_list {
+
+            .item {
+
+                .br_line {
+                    border: .1rem solid $very-light-grayish-blue;
+                }
+            }
+        }
+
+        .shortcut{
+            
+            p {
+                color: $light-grayish-blue;
+            }
+    
+        }
+    }
+
+
+    .user_selection-th2 {
+        background-color: $very-light-gray;
+        box-shadow: 0px 10px 5px 0px #c0baba;
+        
+        a {
+            color: $light-grayish-blue;
+        }
+    }
+
+    .direction-th2 {
+        color: $light-grayish-blue;
+        font-weight: 700;
+    }
+}
