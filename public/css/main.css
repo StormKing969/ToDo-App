@@ -170,7 +170,7 @@ body {
 }
 
 .todo_container .todo_list .item .over {
-  border: 3px dotted #666;
+  border: 3px dotted #f6f6f6;
 }
 
 .todo_container .todo_list .item form {
