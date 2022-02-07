@@ -25,6 +25,27 @@
 
             .item {
 
+                form {
+
+                    input[type="checkbox"] {
+                        border: 0.1rem solid $light-grayish-blue;
+                    }
+
+                    input:checked + p {
+                        text-decoration: line-through;
+                        text-decoration-color: $light-grayish-blue;
+                        color: $light-grayish-blue;
+                    }
+
+                    p {
+                        color: $dark-grayish-blue;
+
+                        &:hover {
+                            color: $very-dark-grayish-blue;
+                        }
+                    }
+                }
+
                 .br_line {
                     border: .1rem solid $very-light-grayish-blue;
                 }

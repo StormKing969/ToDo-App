@@ -37,12 +37,15 @@ body {
 
 .container {
     height: max-content;
+    max-width: 475px;
+    min-width: 375px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem 2rem;
     position: relative;
+    margin: 0 auto;
 
     .quick_fix-bg {
         position: absolute;
@@ -133,26 +136,56 @@ body {
                 justify-content: space-evenly;
                 margin-top: .5rem;
 
+                input[type="checkbox"] {
+                    -webkit-appearance: none;
+                    position: relative;
+                    width: 20.8px;
+                    height: 20.8px;
+                    align-self: center;
+                    margin: 1rem 1rem 1rem 1.5rem;
+                    border-radius: 50%;
+                    border: 0.1rem solid $very-dark-grayish-blue-1;
+                    cursor: pointer;
+                    box-shadow: 0 2px 1px rgba($color: #000000, $alpha: 0.1);
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 65%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 100%;
+                        height: 100%;
+                        pointer-events: none;
+                        background-image: url("../images/icon-check.svg");
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        display: none;
+                    }
+
+                    &:checked {
+                        background: $check-background;
+
+                        &::before {
+                            display: block;
+                        }
+                    }
+                }
+
                 input:checked + p {
                     text-decoration: line-through;
                     text-decoration-color: $dark-grayish-blue;
                     color: $dark-grayish-blue;
                 }
-
-                .checkbox_btn {
-                    width: 1.2rem;
-                    height: 1.2rem;
-                    border-radius: 50%;
-                    margin: 1rem 1rem 1rem 1.2rem;
-                    border: 0.1rem solid $very-dark-grayish-blue-1;
-                    background: $very-dark-desaturated-blue;
-                    align-self: center;
-                }
     
                 p {
-                    padding: 1rem 1rem 1rem 0;
+                    padding: 1.1rem 1rem 1rem 0;
                     align-self: center;
                     width: 75%;
+
+                    &:hover {
+                        color: $light-grayish-blue-hover;
+                    }
                 }
     
                 .cross {
@@ -209,4 +242,11 @@ body {
 .direction {
     margin: 3rem 0 4rem;
     color: $very-dark-grayish-blue-1;
+}
+
+@media (min-height: 875px) {
+
+    .title_section {
+        margin-top: 8vh;
+    }
 }
