@@ -184,13 +184,17 @@ body {
 }
 
 .user_input .input_form {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+  width: 100%;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
 }
 
 .user_input .input_form .input_location {
@@ -198,6 +202,7 @@ body {
   background: #25273c;
   color: #cacde8;
   outline: none;
+  width: 80%;
 }
 
 .user_input .input_form .btn_submit {
@@ -205,7 +210,7 @@ body {
   height: 1.3rem;
   border-radius: 50%;
   border: 0.1rem solid #4d5066;
-  margin: 0 .8rem 0 1.5rem;
+  margin: 0 .8rem 0 1.6rem;
   background: #25273c;
 }
 

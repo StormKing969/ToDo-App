@@ -30,7 +30,8 @@ mongoose.connect(DB);
 // ==================== Schema  Section Start ========================
 
 const itemsSchema = {
-    name: String
+    name: String,
+    checked: Boolean
 };
 
 const Item = mongoose.model("Item", itemsSchema);
@@ -78,7 +79,8 @@ app.listen(port, function() {
 
 function updateItemList(userInput) {
     const item = new Item({
-        name: userInput
+        name: userInput,
+        checked: false
     });
 
     return item;
