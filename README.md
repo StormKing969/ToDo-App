@@ -33,7 +33,12 @@ Users should be able to:
 ### Screenshot
 
 #### Desktop View
-![Desktop View](./screenshots/desktop.png)
+
+##### Desktop View Dark Theme
+![Dark Desktop View]()
+
+##### Desktop View Light Theme
+![Light Desktop View]()
 
 #### Mobile View
 

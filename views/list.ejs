@@ -24,7 +24,7 @@
             <% itemList.forEach(item => { %>
                 <div class="item" draggable="true">
                     <form action="/delete" method="post">
-                        <input class="checkbox_btn" type="checkbox">
+                        <input class="checkbox_btn" type="checkbox" value="<%= item._id %>" onclick="completedItem(this)">
                         <p><%= item.name %></p>
                         <input type="image" src="/images/icon-cross.svg" class="cross" onclick="this.form.submit()">
                         <input type="hidden" name="deleteItem" value="<%= item._id %>">
@@ -36,6 +36,9 @@
 
         <div class="shortcut">
             <p class="item_counter"><%= itemList.length %> items left</p>
+            <a href="/" class="full_list">All</a>
+            <a href="/active" class="active_list">Active</a>
+            <a href="/completed" class="completed_list">Completed</a>
             <p class="empty_completed_list">Clear Completed</p>
         </div>
     </div>

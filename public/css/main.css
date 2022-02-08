@@ -42,6 +42,10 @@
   border: 0.1rem solid #e4e5f1;
 }
 
+.container .todo_container-th2 .shortcut a {
+  color: #cacde8;
+}
+
 .container .todo_container-th2 .shortcut p {
   color: #cacde8;
 }
@@ -108,7 +112,7 @@ body {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  max-width: 475px;
+  max-width: 745px;
   min-width: 375px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -130,7 +134,9 @@ body {
 
 .container .quick_fix-bg {
   position: absolute;
-  width: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   height: 100%;
   background: #161722;
   z-index: -2;
@@ -343,6 +349,16 @@ body {
   width: 100%;
 }
 
+.todo_container .shortcut a {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  display: none;
+  text-decoration: none;
+  color: #4d5066;
+  cursor: pointer;
+}
+
 .todo_container .shortcut p {
   margin: 1rem 1.2rem;
   color: #4d5066;
@@ -364,7 +380,7 @@ body {
 }
 
 .user_selection a {
-  margin: 0 .5rem;
+  margin: 0 1.5rem;
   color: #4d5066;
   cursor: pointer;
   text-decoration: none;
@@ -382,6 +398,15 @@ body {
 @media (min-height: 875px) {
   .title_section {
     margin-top: 8vh;
+  }
+}
+
+@media (min-width: 725px) {
+  .shortcut a {
+    display: block !important;
+  }
+  .user_selection {
+    display: none;
   }
 }
 /*# sourceMappingURL=main.css.map */
