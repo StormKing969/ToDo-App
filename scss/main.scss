@@ -142,10 +142,10 @@ body {
                 input[type="checkbox"] {
                     -webkit-appearance: none;
                     position: relative;
-                    width: 20.8px;
-                    height: 20.8px;
+                    width: 20px;
+                    height: 20px;
                     align-self: center;
-                    margin: 1rem 1rem 1rem 1.5rem;
+                    margin: 1rem 1rem 1rem 1.6rem;
                     border-radius: 50%;
                     border: 0.1rem solid $very-dark-grayish-blue-1;
                     cursor: pointer;
@@ -262,6 +262,60 @@ body {
     }
 }
 
+@media (min-width: 455px) {
+    .todo_container {
+    
+        .todo_list {
+    
+            .item {
+            
+                form {
+                    
+                    input[type="checkbox"] {
+                        margin-left: calc(1.6rem - 1%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 510px) {
+    .todo_container {
+    
+        .todo_list {
+    
+            .item {
+            
+                form {
+                    
+                    input[type="checkbox"] {
+                        margin-left: calc(1.6rem - 2%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .todo_container {
+    
+        .todo_list {
+    
+            .item {
+            
+                form {
+                    
+                    input[type="checkbox"] {
+                        margin-left: calc(1.6rem - 3%);
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (min-width: 725px) {
     .shortcut {
         a {
@@ -272,5 +326,20 @@ body {
     .user_selection {
         display: none;
     }
-}
 
+    .todo_container {
+    
+        .todo_list {
+    
+            .item {
+            
+                form {
+                    
+                    input[type="checkbox"] {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
