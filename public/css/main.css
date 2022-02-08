@@ -395,6 +395,10 @@ body {
   color: #3a7bfd;
 }
 
+.user_selection .full_list {
+  color: #3a7bfd;
+}
+
 .direction {
   margin: 3rem 0 4rem;
   color: #4d5066;

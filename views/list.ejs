@@ -23,10 +23,13 @@
         <div class="todo_list">
             <% itemList.forEach(item => { %>
                 <div class="item" draggable="true">
-                    <form  method="post">
-                        <input class="checkbox_btn" type="checkbox" value="<%= item._id %>" formaction="/">
+                    <form method="post">
+                        <input type="image" src="/images/icon-cross.svg" class="cross"  onclick="this.form.action='/check'">
+                        <input type="hidden" name="checkedItem" value="<%= item._id %>" >
+
                         <p><%= item.name %></p>
-                        <input type="image" src="/images/icon-cross.svg" class="cross" onclick="this.form.submit()">
+
+                        <input type="image" src="/images/icon-cross.svg" class="cross" onclick="this.form.action='/delete'">
                         <input type="hidden" name="deleteItem" value="<%= item._id %>">
                     </form>
                     <span class="br_line"></span>

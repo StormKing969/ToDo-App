@@ -248,12 +248,18 @@ body {
             color: $bright-blue;
         }
     }
+
+    .full_list {
+        color: $bright-blue;
+    }
 }
 
 .direction {
     margin: 3rem 0 4rem;
     color: $very-dark-grayish-blue-1;
 }
+
+// ================== Different Screen Settings ==================
 
 @media (min-height: 875px) {
 

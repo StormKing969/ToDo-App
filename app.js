@@ -50,6 +50,26 @@ app.get("/", function(req, res) {
     })
 })
 
+app.get("/active", function(req, res) {
+    Item.find({checked: false}, function(err, itemsFound) {
+        if(!err) {
+            res.render("list", {itemList: itemsFound});
+        } else {
+            console.log(err);
+        }
+    })
+})
+
+app.get("/completed", function(req, res) {
+    Item.find({checked: true}, function(err, itemsFound) {
+        if(!err) {
+            res.render("list", {itemList: itemsFound});
+        } else {
+            console.log(err);
+        }
+    })
+})
+
 app.post("/", function(req, res) {
     const item = req.body.newItem;
 
@@ -62,6 +82,25 @@ app.post("/delete", function(req, res) {
     const deleteItemId = req.body.deleteItem;
 
     deleteItem(deleteItemId);
+
+    // When post, save the value in variable then send to the "get"
+    res.redirect("/");
+})
+
+app.post("/check", function(req, res) {
+    const checkedItemID = req.body.checkedItem;
+
+    Item.findOneAndUpdate(
+        {_id: checkedItemID},
+        {$set: {checked: true}}, function(err, foundItem) {
+            if(!err) {
+                console.log("Update Successful");
+                // res.redirect("/");
+            } else {
+                console.log(err);
+            }
+        }
+    )
 
     // When post, save the value in variable then send to the "get"
     res.redirect("/");
