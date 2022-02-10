@@ -265,7 +265,7 @@ body {
   margin-top: .5rem;
 }
 
-.todo_container .todo_list .item form input[type="checkbox"] {
+.todo_container .todo_list .item form input[type="submit"] {
   -webkit-appearance: none;
   position: relative;
   width: 20px;
@@ -276,41 +276,10 @@ body {
   margin: 1rem 1rem 1rem 1.6rem;
   border-radius: 50%;
   border: 0.1rem solid #4d5066;
+  background: #25273c;
   cursor: pointer;
   -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
-}
-
-.todo_container .todo_list .item form input[type="checkbox"]::before {
-  content: "";
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background-image: url("../images/icon-check.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  display: none;
-}
-
-.todo_container .todo_list .item form input[type="checkbox"]:checked {
-  background: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
-  background: linear-gradient(#57ddff, #c058f3);
-}
-
-.todo_container .todo_list .item form input[type="checkbox"]:checked::before {
-  display: block;
-}
-
-.todo_container .todo_list .item form input:checked + p {
-  text-decoration: line-through;
-  -webkit-text-decoration-color: #777a92;
-          text-decoration-color: #777a92;
-  color: #777a92;
 }
 
 .todo_container .todo_list .item form p {
@@ -395,8 +364,8 @@ body {
   color: #3a7bfd;
 }
 
-.user_selection .full_list {
-  color: #3a7bfd;
+.user_selection .active {
+  color: #3a7bfd !important;
 }
 
 .direction {

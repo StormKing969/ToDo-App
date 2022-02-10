@@ -24,8 +24,8 @@
             <% itemList.forEach(item => { %>
                 <div class="item" draggable="true">
                     <form method="post">
-                        <input type="image" src="/images/icon-cross.svg" class="cross"  onclick="this.form.action='/check'">
-                        <input type="hidden" name="checkedItem" value="<%= item._id %>" >
+                        <input class="checkbox_btn" type="submit" onclick="this.form.action='/check'" value="">
+                        <input type="hidden" name="checkedItem" value="<%= item._id %>">
 
                         <p><%= item.name %></p>
 
@@ -39,17 +39,17 @@
 
         <div class="shortcut">
             <p class="item_counter"><%= itemList.length %> items left</p>
-            <a href="/" class="full_list">All</a>
-            <a href="/active" class="active_list">Active</a>
-            <a href="/completed" class="completed_list">Completed</a>
+            <a href="/" id="full-list" class="full_list">All</a>
+            <a href="/active" id="active-list" class="active_list">Active</a>
+            <a href="/completed" id="completed-list" class="completed_list">Completed</a>
             <p class="empty_completed_list">Clear Completed</p>
         </div>
     </div>
 
     <div class="user_selection">
-        <a href="/" class="full_list">All</a>
-        <a href="/active" class="active_list">Active</a>
-        <a href="/completed" class="completed_list">Completed</a>
+        <a href="/" id="full-list" class="full_list">All</a>
+        <a href="/active" id="active-list" class="active_list">Active</a>
+        <a href="/completed" id="completed-list" class="completed_list">Completed</a>
     </div>
 
     <p class="direction">Drag and drop to reorder list</p>

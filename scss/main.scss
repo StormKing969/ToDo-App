@@ -139,7 +139,7 @@ body {
                 justify-content: space-evenly;
                 margin-top: .5rem;
 
-                input[type="checkbox"] {
+                input[type="submit"] {
                     -webkit-appearance: none;
                     position: relative;
                     width: 20px;
@@ -148,39 +148,11 @@ body {
                     margin: 1rem 1rem 1rem 1.6rem;
                     border-radius: 50%;
                     border: 0.1rem solid $very-dark-grayish-blue-1;
+                    background: $very-dark-desaturated-blue;
                     cursor: pointer;
                     box-shadow: 0 2px 1px rgba($color: #000000, $alpha: 0.1);
-
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        top: 65%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        width: 100%;
-                        height: 100%;
-                        pointer-events: none;
-                        background-image: url("../images/icon-check.svg");
-                        background-size: contain;
-                        background-repeat: no-repeat;
-                        display: none;
-                    }
-
-                    &:checked {
-                        background: $check-background;
-
-                        &::before {
-                            display: block;
-                        }
-                    }
                 }
-
-                input:checked + p {
-                    text-decoration: line-through;
-                    text-decoration-color: $dark-grayish-blue;
-                    color: $dark-grayish-blue;
-                }
-    
+ 
                 p {
                     padding: 1.1rem 1rem 1rem 0;
                     align-self: center;
@@ -249,10 +221,11 @@ body {
         }
     }
 
-    .full_list {
-        color: $bright-blue;
+    .active {
+        color: $bright-blue !important; 
     }
 }
+
 
 .direction {
     margin: 3rem 0 4rem;

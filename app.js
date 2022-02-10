@@ -89,6 +89,7 @@ app.post("/delete", function(req, res) {
 
 app.post("/check", function(req, res) {
     const checkedItemID = req.body.checkedItem;
+    console.log(checkedItemID);
 
     Item.findOneAndUpdate(
         {_id: checkedItemID},
