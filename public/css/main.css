@@ -19,15 +19,9 @@
           box-shadow: 0px 10px 5px 0px #c0baba;
 }
 
-.container .todo_container-th2 .todo_list .item form input[type="checkbox"] {
+.container .todo_container-th2 .todo_list .item form input[type="submit"] {
   border: 0.1rem solid #cacde8;
-}
-
-.container .todo_container-th2 .todo_list .item form input:checked + p {
-  text-decoration: line-through;
-  -webkit-text-decoration-color: #cacde8;
-          text-decoration-color: #cacde8;
-  color: #cacde8;
+  background: #fafafa;
 }
 
 .container .todo_container-th2 .todo_list .item form p {

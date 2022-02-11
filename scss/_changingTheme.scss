@@ -27,15 +27,16 @@
 
                 form {
 
-                    input[type="checkbox"] {
+                    input[type="submit"] {
                         border: 0.1rem solid $light-grayish-blue;
+                        background: $very-light-gray;
                     }
 
-                    input:checked + p {
-                        text-decoration: line-through;
-                        text-decoration-color: $light-grayish-blue;
-                        color: $light-grayish-blue;
-                    }
+                    // input:checked + p {
+                    //     text-decoration: line-through;
+                    //     text-decoration-color: $light-grayish-blue;
+                    //     color: $light-grayish-blue;
+                    // }
 
                     p {
                         color: $dark-grayish-blue;
