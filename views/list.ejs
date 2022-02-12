@@ -1,59 +1,7 @@
 <!-- Import the header section -->
 <%- include("./header"); %>
 
-<span class="bg-1"></span>
-<span class="bg-2"></span>
 
-<section class="container">
-    <span class="quick_fix-bg"></span>
-    <div class="title_section">
-        <h1>TODO</h1>
-
-        <img src="/images/icon-sun.svg" alt="sun icon" id="icon">
-    </div>
-
-    <div class="user_input">
-        <form action="/" method="post" class="input_form">
-            <input class="input_location" type="text" name="newItem" placeholder="Create a new todo..." autocomplete="off">
-            <button class="btn_submit" type="submit"></button>
-        </form>
-    </div>
-
-    <div class="todo_container">
-        <div class="todo_list">
-            <% itemList.forEach(item => { %>
-                <div class="item" draggable="true">
-                    <form method="post">
-                        <input class="checkbox_btn" type="submit" onclick="this.form.action='/check'" value="">
-                        <input type="hidden" name="checkedItem" value="<%= item._id %>">
-
-                        <p><%= item.name %></p>
-
-                        <input type="image" src="/images/icon-cross.svg" class="cross" onclick="this.form.action='/delete'">
-                        <input type="hidden" name="deleteItem" value="<%= item._id %>">
-                    </form>
-                    <span class="br_line"></span>
-                </div>
-            <% }) %>
-        </div>
-
-        <div class="shortcut">
-            <p class="item_counter"><%= itemList.length %> items left</p>
-            <a href="/" id="full-list" class="full_list">All</a>
-            <a href="/active" id="active-list" class="active_list">Active</a>
-            <a href="/completed" id="completed-list" class="completed_list">Completed</a>
-            <p class="empty_completed_list">Clear Completed</p>
-        </div>
-    </div>
-
-    <div class="user_selection">
-        <a href="/" id="full-list" class="full_list">All</a>
-        <a href="/active" id="active-list" class="active_list">Active</a>
-        <a href="/completed" id="completed-list" class="completed_list">Completed</a>
-    </div>
-
-    <p class="direction">Drag and drop to reorder list</p>
-</section>
 
 <!-- Import the footer section -->
 <%- include("./footer"); %>
