@@ -43,7 +43,16 @@ const Item = mongoose.model("Item", itemsSchema);
 app.get("/", function(req, res) {
     Item.find({}, function(err, itemsFound) {
         if(!err) {
-            res.render("list", {itemList: itemsFound});
+            Item.find({checked: false}, function(err, activeitemsFound) {
+                if(!err) {
+                    res.render("list", {
+                        itemList: itemsFound,
+                        activeItemsLeft: activeitemsFound.length
+                    });  
+                } else {
+                    return console.log(err);
+                }
+            })
         } else {
             console.log(err);
         }
@@ -52,11 +61,20 @@ app.get("/", function(req, res) {
 
 app.post("/", function(req, res) {
     const item = req.body.userInput;
-
+    
     updateItemList(item).save();
     // When post, save the value in variable then send to the "get"
     res.redirect("/");
 })
+
+app.post("/delete", function(req, res) {
+    const item_id = req.body.itemID;
+    
+    deleteItem(item_id)
+    // When post, save the value in variable then send to the "get"
+    res.redirect("/");
+})
+
 
 // ==================== Get/Post Section End ========================
 
@@ -86,6 +104,5 @@ function deleteItem(item_id) {
         }
     })
 }
-
 
 // ==================== Sub Function End ========================

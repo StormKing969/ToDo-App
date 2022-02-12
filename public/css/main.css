@@ -62,12 +62,20 @@
           align-items: center;
 }
 
-.user_input form input {
+.user_input .userInput_form input {
   width: 95%;
   background: transparent;
   outline: none;
   border: none;
   color: #cacde8;
+}
+
+.user_input_btn {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  overflow: hidden;
 }
 
 .list_display {
@@ -113,7 +121,8 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  padding: 1.5rem 0.8rem 1.5rem 0.2rem;
+  height: 100%;
+  padding: 1rem 0;
   border-bottom: 1px solid #777a92;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -133,10 +142,12 @@
 .item_display .item_content {
   color: #cacde8;
   width: 90%;
+  height: 100%;
+  margin-top: 0.1rem;
 }
 
 .cross {
-  margin: 0 0.5rem 0;
+  margin: 0.1rem 0.5rem 0;
   cursor: pointer;
 }
 

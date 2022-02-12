@@ -38,7 +38,7 @@
     flex-grow: 1;
     align-items: center;
 
-    form {
+    .userInput_form {
         
         input {
             width: 95%;
@@ -48,4 +48,12 @@
             color: $light-grayish-blue;
         }
     }
+}
+
+.user_input_btn {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    overflow: hidden;
 }

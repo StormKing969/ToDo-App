@@ -14,24 +14,23 @@
         <img src="./images/icon-sun.svg" alt="Sun Icon" class="theme">
     </header>
 
-    <section class="user_input_box">
+    <form method="post" action="/" class="user_input_box">
         <div class="check">
             <div class="check_mark">
-
+                <button type="submit"" class="user_input_btn"></button>
             </div>
         </div>
 
         <div class="user_input">
-            <form action="post">
-                <input type="text" name="userInput" placeholder="Create a new todo...">
-            </form>
+            <div class="userInput_form">
+                <input type="text" name="userInput" autocomplete="off" placeholder="Create a new todo...">
+            </div>
         </div>
-    </section>
+    </form>
 
     <section class="list_display">
         <% itemList.forEach(item => { %>
-            <% console.log(item) %>
-            <div class="item_display checked">
+            <div class="item_display">
                 <div class="check">
                     <div class="check_mark">
                         <img src="./images/icon-check.svg" alt="Check Icon">
@@ -40,15 +39,16 @@
                 <div class="item_content">
                     <p><%= item.content %></p>
                 </div>
-                <div class="cross">
-                    <img src="./images/icon-cross.svg" alt="Cross Icon">
-                </div>
+                <form method="post" class="cross">
+                    <input type="image" src="./images/icon-cross.svg" alt="Cross Icon" onclick="this.form.action='/delete'">
+                    <input type="hidden" name="itemID" value="<%= item._id %>">
+                </form>
             </div>
         <% }) %>
 
         <div class="list_info">
             <div class="items_left">
-                <p>5 items left</p>
+                <p><%= activeItemsLeft %> items left</p>
             </div>
             <div class="items_statues">
                 <span class="active">All</span>
