@@ -1,7 +1,78 @@
 <!-- Import the header section -->
 <%- include("./header"); %>
 
+<div class="background_img">
+    <img src="./images/bg-mobile-dark.jpg" alt="Dark Mobile Background">
+</div>
 
+<div class="container">
+    <header>
+        <h1 class="title">
+            TODO
+        </h1>
+    
+        <img src="./images/icon-sun.svg" alt="Sun Icon" class="theme">
+    </header>
+
+    <section class="user_input_box">
+        <div class="check">
+            <div class="check_mark">
+
+            </div>
+        </div>
+
+        <div class="user_input">
+            <form action="post">
+                <input type="text" name="userInput" placeholder="Create a new todo...">
+            </form>
+        </div>
+    </section>
+
+    <section class="list_display">
+        <% itemList.forEach(item => { %>
+            <% console.log(item) %>
+            <div class="item_display checked">
+                <div class="check">
+                    <div class="check_mark">
+                        <img src="./images/icon-check.svg" alt="Check Icon">
+                    </div>
+                </div>
+                <div class="item_content">
+                    <p><%= item.content %></p>
+                </div>
+                <div class="cross">
+                    <img src="./images/icon-cross.svg" alt="Cross Icon">
+                </div>
+            </div>
+        <% }) %>
+
+        <div class="list_info">
+            <div class="items_left">
+                <p>5 items left</p>
+            </div>
+            <div class="items_statues">
+                <span class="active">All</span>
+                <span>Active</span>
+                <span>Completed</span>
+            </div>
+            <div class="items_clear">
+                <span>Clear Completed</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="statues">
+        <div class="items_statues">
+            <span class="active">All</span>
+            <span>Active</span>
+            <span>Completed</span>
+        </div>
+    </section>
+
+    <section class="drag_drop">
+        <p>Drag and drop to reorder list</p>
+    </section>
+</div>
 
 <!-- Import the footer section -->
 <%- include("./footer"); %>

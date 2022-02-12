@@ -1,7 +1,10 @@
 .attribution { 
-    font-size: 11px; text-align: center; 
+    font-size: 11px; 
+    text-align: center;
+    margin: 1rem 0 0;
+    color: $dark-grayish-blue; 
 
     a { 
-        color: hsl(228, 45%, 44%); 
+        color: $bright-blue;
     }
 }

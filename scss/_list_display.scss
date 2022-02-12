@@ -1,0 +1,118 @@
+.list_display {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 0.5rem;
+    background: $very-dark-desaturated-blue;
+}
+
+.check_mark {
+    
+    img {
+        visibility: hidden;
+    }
+
+    &:hover {
+
+        img {
+            visibility: visible;
+        }
+    }
+}
+
+// When item is selected
+.checked {
+
+    .check_mark {
+        background: $check-background;
+    
+        img {
+            visibility: visible;
+        }
+    }
+    
+    .item_content {
+        
+        p {
+            text-decoration: line-through;
+            color: $dark-grayish-blue;  
+        }
+    }
+}
+
+.item_display {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem 0.8rem 1.5rem 0.2rem;
+    border-bottom: 1px solid $dark-grayish-blue;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-0.5rem);
+        border: none;
+        border-radius: 0.5rem;
+        background: $very-dark-desaturated-blue;
+        box-shadow: 0 0.3rem 2rem 0.5rem $very-dark-blue;
+    }
+
+    .item_content {
+        color: $light-grayish-blue;
+        width: 90%;
+    }
+}
+
+.cross {
+    margin: 0 0.5rem 0;
+    cursor: pointer;
+}
+
+.list_info {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+    padding: 0 1rem;
+    color: $dark-grayish-blue; 
+}
+
+.items_statues {
+    display: none;
+}
+
+.items_clear {
+    cursor: pointer;
+
+    &:hover {
+        color: $bright-blue;
+    }
+}
+
+.statues {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 1.5rem 0;
+    border-radius: 0.5rem;
+    background: $very-dark-desaturated-blue;
+    color: $dark-grayish-blue; 
+
+    .items_statues {
+        display: block;
+        
+        span {
+            margin: 0 0.5rem;
+            cursor: pointer;
+
+            &:hover {
+                color: $bright-blue;
+            }
+        }
+    }
+}
+
+.active {
+    color: $bright-blue;
+}

@@ -30,7 +30,7 @@ mongoose.connect(DB);
 // ==================== Schema  Section Start ========================
 
 const itemsSchema = {
-    name: String,
+    content: String,
     checked: Boolean
 };
 
@@ -50,59 +50,10 @@ app.get("/", function(req, res) {
     })
 })
 
-app.get("/active", function(req, res) {
-    Item.find({checked: false}, function(err, itemsFound) {
-        if(!err) {
-            res.render("list", {itemList: itemsFound});
-        } else {
-            console.log(err);
-        }
-    })
-})
-
-app.get("/completed", function(req, res) {
-    Item.find({checked: true}, function(err, itemsFound) {
-        if(!err) {
-            res.render("list", {itemList: itemsFound});
-        } else {
-            console.log(err);
-        }
-    })
-})
-
 app.post("/", function(req, res) {
-    const item = req.body.newItem;
+    const item = req.body.userInput;
 
     updateItemList(item).save();
-    // When post, save the value in variable then send to the "get"
-    res.redirect("/");
-})
-
-app.post("/delete", function(req, res) {
-    const deleteItemId = req.body.deleteItem;
-
-    deleteItem(deleteItemId);
-
-    // When post, save the value in variable then send to the "get"
-    res.redirect("/");
-})
-
-app.post("/check", function(req, res) {
-    const checkedItemID = req.body.checkedItem;
-    console.log(checkedItemID);
-
-    Item.findOneAndUpdate(
-        {_id: checkedItemID},
-        {$set: {checked: true}}, function(err, foundItem) {
-            if(!err) {
-                console.log("Update Successful");
-                // res.redirect("/");
-            } else {
-                console.log(err);
-            }
-        }
-    )
-
     // When post, save the value in variable then send to the "get"
     res.redirect("/");
 })
@@ -119,7 +70,7 @@ app.listen(port, function() {
 
 function updateItemList(userInput) {
     const item = new Item({
-        name: userInput,
+        content: userInput,
         checked: false
     });
 
