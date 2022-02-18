@@ -1,5 +1,8 @@
 const theme_btn = document.getElementById("theme");
 
+const background_img_tag = document.querySelector(".background_img img");
+console.log(background_img_tag);
+
 const h1_tag = document.querySelector(".title");
 const drag_drop_tag = document.querySelector(".drag_drop");
 
@@ -17,7 +20,9 @@ theme_btn.addEventListener("click", () => {
     if(theme_btn.src.includes("sun") === true) {
         theme_btn.src = "../images/icon-moon.svg"
 
+        background_img_tag.src = "../images/bg-mobile-light.jpg"
         document.body.classList.add("light_body");  
+
         h1_tag.classList.add("light_header");   
         drag_drop_tag.classList.add("light_drag-drop"); 
         
@@ -40,7 +45,9 @@ theme_btn.addEventListener("click", () => {
     } else if(theme_btn.src.includes("moon") === true) {
         theme_btn.src = "../images/icon-sun.svg"
 
-        document.body.classList.remove("light_body"); 
+        background_img_tag.src = "../images/bg-mobile-dark.jpg"
+        document.body.classList.remove("light_body");
+
         h1_tag.classList.remove("light_header");   
         drag_drop_tag.classList.remove("light_drag-drop");  
 
