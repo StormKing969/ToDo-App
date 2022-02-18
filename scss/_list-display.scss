@@ -6,6 +6,10 @@
     background: $very-dark-desaturated-blue;
 }
 
+.light_list_display {
+    background: $very-light-gray;
+}
+
 .check_mark {
     
     img {
@@ -64,6 +68,18 @@
         height: 100%;
         margin-top: 0.1rem;
     }
+
+    .light_item_content {
+        color: $very-dark-grayish-blue;
+    }
+}
+
+.light_item_display {
+
+    &:hover {
+        background: $very-light-gray;
+        box-shadow: 0 0.3rem 2rem 0.5rem $very-light-grayish-blue;;
+    }
 }
 
 .cross {
@@ -114,6 +130,11 @@
             }
         }
     }
+}
+
+.light_statues {
+    background: $very-light-gray;
+    color: $very-dark-grayish-blue; 
 }
 
 .active {

@@ -8,6 +8,10 @@
     border-radius: 0.5rem;
 }
 
+.light_input_box {
+    background: $very-light-gray;
+}
+
 .check {
     width: 2rem;
     height: 2rem;
@@ -34,6 +38,11 @@
     }
 }
 
+.light_check_mark {
+    background: $very-light-gray;
+    border-radius: 50%;
+}
+
 .user_input {
     flex-grow: 1;
     align-items: center;
@@ -47,7 +56,12 @@
             border: none;
             color: $light-grayish-blue;
         }
+        
+        .light_userInput_form {
+            color: $very-dark-grayish-blue;
+        }
     }
+
 }
 
 .user_input_btn {
@@ -56,4 +70,6 @@
     background: transparent;
     border: none;
     overflow: hidden;
+    outline: none;
+    border-radius: 50%;
 }

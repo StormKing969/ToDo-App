@@ -1,7 +1,7 @@
 @import "./shared/variables";
 @import "./user-input";
-@import "./list_display";
-@import "./drag_drop";
+@import "./list-display";
+@import "./drag-drop";
 @import "./footer";
 
 * {
@@ -17,6 +17,10 @@ body {
     background-color: $very-dark-blue;
     font-family: "Josefin Sans", sans-serif;
     font-size: $normal-size;
+}
+
+.light_body {
+    background-color: $very-light-grayish-blue;
 }
 
 .background_img {
@@ -60,5 +64,9 @@ header {
     img {
         width: 2rem;
         height: 2rem;
+    }
+    
+    .light_header {
+        color: $very-light-grayish-blue;
     }
 }
