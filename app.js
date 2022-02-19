@@ -67,6 +67,11 @@ app.post("/", function(req, res) {
     res.redirect("/");
 })
 
+app.post("/update", function(req, res) {
+    const completedItem = req.body.completedItemID;
+    console.log(completedItem)
+})
+
 app.post("/delete", function(req, res) {
     const item_id = req.body.itemID;
     

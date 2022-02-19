@@ -32,9 +32,11 @@
         <% itemList.forEach(item => { %>
             <div class="item_display">
                 <div class="check">
-                    <div class="check_mark">
+                    <form class="check_mark" method="post">
                         <img src="./images/icon-check.svg" alt="Check Icon">
-                    </div>
+                        <input type="hidden" name="completedItemID" value="<%= item._id %>">
+                        <button type="submit"" class="user_choice_btn" onclick="this.form.action='/update'"></button>
+                    </form>
                 </div>
                 <div class="item_content">
                     <p><%= item.content %></p>

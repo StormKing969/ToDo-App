@@ -1,7 +1,6 @@
 const theme_btn = document.getElementById("theme");
 
 const background_img_tag = document.querySelector(".background_img img");
-console.log(background_img_tag);
 
 const h1_tag = document.querySelector(".title");
 const drag_drop_tag = document.querySelector(".drag_drop");
@@ -17,6 +16,10 @@ const item_content_tag = document.querySelectorAll(".item_content");
 const statues_tag = document.querySelector(".statues");
 
 theme_btn.addEventListener("click", () => {
+    theme();
+})
+
+function theme() {
     if(theme_btn.src.includes("sun") === true) {
         theme_btn.src = "../images/icon-moon.svg"
 
@@ -67,4 +70,4 @@ theme_btn.addEventListener("click", () => {
 
         statues_tag.classList.remove("light_statues"); 
     }
-})
+}

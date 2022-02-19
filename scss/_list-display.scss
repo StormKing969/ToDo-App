@@ -11,9 +11,15 @@
 }
 
 .check_mark {
-    
+    position: relative;
+
     img {
+        position: absolute;
         visibility: hidden;
+    }
+
+    button {
+        z-index: 999;
     }
 
     &:hover {
@@ -22,6 +28,16 @@
             visibility: visible;
         }
     }
+}
+
+.user_choice_btn {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    border-radius: 50%;
 }
 
 // When item is selected
