@@ -32,11 +32,18 @@
         <% itemList.forEach(item => { %>
             <div class="item_display">
                 <div class="check">
-                    <form class="check_mark" method="post">
-                        <img src="./images/icon-check.svg" alt="Check Icon">
-                        <input type="hidden" name="completedItemID" value="<%= item._id %>">
-                        <button type="submit"" class="user_choice_btn" onclick="this.form.action='/update'"></button>
-                    </form>
+                    <% if(item.checked === true) { %>
+                        <form class="check_mark checked_item_btn" method="post">
+                            <img src="./images/icon-check.svg" alt="Check Icon">
+                            <input type="hidden" name="completedItemID" value="<%= item._id %>">
+                            <button type="submit"" class="user_choice_btn" onclick="this.form.action='/update'"></button>
+                        </form>
+                    <% } else { %>
+                        <form class="check_mark" method="post">
+                            <input type="hidden" name="completedItemID" value="<%= item._id %>">
+                            <button type="submit"" class="user_choice_btn" onclick="this.form.action='/update'"></button>
+                        </form>
+                    <% } %>
                 </div>
                 <div class="item_content">
                     <% if(item.checked === true) { %>

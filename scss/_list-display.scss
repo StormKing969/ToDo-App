@@ -31,6 +31,14 @@
     }
 }
 
+.checked_item_btn {
+    background: $check-background;
+    
+    img {
+        visibility: visible;
+    }
+}
+
 .user_choice_btn {
     width: 100%;
     height: 100%;

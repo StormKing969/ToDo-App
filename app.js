@@ -10,9 +10,6 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 
-// importing local module
-const reload = require(__dirname + "/helper/reload.js");
-
 const port = process.env.PORT || 3000;
 
 const app = express();
@@ -44,22 +41,26 @@ const Item = mongoose.model("Item", itemsSchema);
 // ==================== Get/Post Section Start ========================
 
 app.get("/", function(req, res) {
-    Item.find({}, function(err, itemsFound) {
-        if(!err) {
-            Item.find({checked: false}, function(err, activeitemsFound) {
-                if(!err) {
-                    res.render("list", {
-                        itemList: itemsFound,
-                        activeItemsLeft: activeitemsFound.length
-                    });  
-                } else {
-                    return console.log(err);
-                }
-            })
-        } else {
-            console.log(err);
-        }
-    })
+    function displayList() {
+        Item.find({}, function(err, itemsFound) {
+            if(!err) {
+                Item.find({checked: false}, function(err, activeitemsFound) {
+                    if(!err) {
+                        res.render("list", {
+                            itemList: itemsFound,
+                            activeItemsLeft: activeitemsFound.length
+                        });  
+                    } else {
+                        return console.log(err);
+                    }
+                })
+            } else {
+                console.log(err);
+            }
+        })
+    }
+
+    setTimeout(displayList, 100)
 })
 
 app.post("/", function(req, res) {
@@ -86,10 +87,7 @@ app.post("/update", function(req, res) {
         }
     )
 
-    // reload();
-    location.reload();
-
-    // When post, save the value in variable then send to the "get"
+    // // When post, save the value in variable then send to the "get"
     res.redirect("/");
 })
 
