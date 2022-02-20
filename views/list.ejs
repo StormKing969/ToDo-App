@@ -39,11 +39,17 @@
                     </form>
                 </div>
                 <div class="item_content">
-                    <p><%= item.content %></p>
+                    <% if(item.checked === true) { %>
+                        <p class="item_checked"><%= item.content %></p>
+                    <% } else { %>
+                        <p><%= item.content %></p>
+                    <% } %>
                 </div>
                 <form method="post" class="cross">
-                    <input type="image" src="./images/icon-cross.svg" alt="Cross Icon" onclick="this.form.action='/delete'">
                     <input type="hidden" name="itemID" value="<%= item._id %>">
+                    <button type="submit" onclick="this.form.action='/delete'">
+                        <img src="./images/icon-cross.svg" alt="Cross Icon">
+                    </button>
                 </form>
             </div>
         <% }) %>
@@ -57,9 +63,9 @@
                 <span>Active</span>
                 <span>Completed</span>
             </div>
-            <div class="items_clear">
-                <span>Clear Completed</span>
-            </div>
+            <form method="post" class="items_clear">
+                <button type="submit" onclick="this.form.action='/clear'">Clear Completed</button>
+            </form>
         </div>
     </section>
 

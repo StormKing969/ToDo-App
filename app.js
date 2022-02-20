@@ -10,6 +10,9 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 
+// importing local module
+const reload = require(__dirname + "/helper/reload.js");
+
 const port = process.env.PORT || 3000;
 
 const app = express();
@@ -70,7 +73,29 @@ app.post("/", function(req, res) {
 app.post("/update", function(req, res) {
     const completedItem = req.body.completedItemID;
     
-    checkItem(completedItem);
+    Item.findOne(
+        {_id: completedItem},
+        function(err, item) {
+            if(!err) {
+                if(item.checked === false) {
+                    checkItem(completedItem, true);
+                } else {
+                    checkItem(completedItem, false);
+                }
+            }
+        }
+    )
+
+    // reload();
+    location.reload();
+
+    // When post, save the value in variable then send to the "get"
+    res.redirect("/");
+})
+
+app.post("/clear", function(req, res) {
+    deleteAllItems(true)
+    
     // When post, save the value in variable then send to the "get"
     res.redirect("/");
 })
@@ -103,13 +128,13 @@ function updateItemList(userInput) {
     return item;
 }
 
-function checkItem(checkedItemID) {
+function checkItem(checkedItemID, state) {
     Item.findOneAndUpdate(
         {_id: checkedItemID}, // Filter
-        {checked: true},      // Updated item
+        {checked: state},      // Updated item
         function(err, itemsFound) {
             if(!err) {
-                console.log("Removal was successful");
+                console.log("Update was successful");
             } else {
                 console.log(err);
             }
@@ -125,6 +150,19 @@ function deleteItem(item_id) {
             console.log(err);
         }
     })
+}
+
+function deleteAllItems(condition) {
+    Item.deleteMany(
+        {checked: condition},
+        function(err, foundItems) {
+            if(!err) {
+                console.log("Removal was successful");
+            } else {
+                console.log(err);
+            }
+        }
+    )
 }
 
 // ==================== Sub Function End ========================

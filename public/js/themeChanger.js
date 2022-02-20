@@ -12,6 +12,7 @@ const userInput_form_tag = document.querySelector(".userInput_form input");
 const list_display_tag = document.querySelector(".list_display");
 const item_display_tag = document.querySelectorAll(".item_display");
 const item_content_tag = document.querySelectorAll(".item_content");
+const clear_content_tag = document.querySelector(".items_clear button");
 
 const statues_tag = document.querySelector(".statues");
 
@@ -42,6 +43,7 @@ function theme() {
         item_content_tag.forEach(item => {
             item.classList.add("light_item_content"); 
         })
+        clear_content_tag.classList.add("light_items_clear"); 
         
         statues_tag.classList.add("light_statues"); 
         
@@ -67,6 +69,7 @@ function theme() {
         item_content_tag.forEach(item => {
             item.classList.remove("light_item_content"); 
         }) 
+        clear_content_tag.classList.remove("light_items_clear");
 
         statues_tag.classList.remove("light_statues"); 
     }

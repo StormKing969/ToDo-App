@@ -121,6 +121,7 @@
 
 .check_mark button {
   z-index: 999;
+  cursor: pointer;
 }
 
 .check_mark:hover img {
@@ -137,20 +138,6 @@
   border-radius: 50%;
 }
 
-.checked .check_mark {
-  background: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
-  background: linear-gradient(#57ddff, #c058f3);
-}
-
-.checked .check_mark img {
-  visibility: visible;
-}
-
-.checked .item_content p {
-  text-decoration: line-through;
-  color: #777a92;
-}
-
 .item_display {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -158,6 +145,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: left;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
   height: 100%;
   padding: 1rem 0;
@@ -179,9 +170,16 @@
 
 .item_display .item_content {
   color: #cacde8;
-  width: 90%;
+  width: 75%;
   height: 100%;
   margin-top: 0.1rem;
+}
+
+.item_display .item_content .item_checked {
+  text-decoration: line-through;
+  -webkit-text-decoration-color: #777a92;
+          text-decoration-color: #777a92;
+  color: #777a92;
 }
 
 .item_display .light_item_content {
@@ -195,7 +193,20 @@
 }
 
 .cross {
-  margin: 0.1rem 0.5rem 0;
+  cursor: pointer;
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+
+.cross button {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  overflow: hidden;
+  outline: none;
   cursor: pointer;
 }
 
@@ -215,12 +226,21 @@
   display: none;
 }
 
-.items_clear {
+.items_clear button {
   cursor: pointer;
+  background: #25273c;
+  color: #777a92;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  border: none;
 }
 
-.items_clear:hover {
+.items_clear button:hover {
   color: #3a7bfd;
+}
+
+.items_clear .light_items_clear {
+  background: #fafafa;
 }
 
 .statues {

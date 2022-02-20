@@ -20,6 +20,7 @@
 
     button {
         z-index: 999;
+        cursor: pointer;
     }
 
     &:hover {
@@ -40,29 +41,11 @@
     border-radius: 50%;
 }
 
-// When item is selected
-.checked {
-
-    .check_mark {
-        background: $check-background;
-    
-        img {
-            visibility: visible;
-        }
-    }
-    
-    .item_content {
-        
-        p {
-            text-decoration: line-through;
-            color: $dark-grayish-blue;  
-        }
-    }
-}
-
 .item_display {
     display: flex;
     align-items: center;
+    text-align: left;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
     padding: 1rem 0;
@@ -80,9 +63,15 @@
 
     .item_content {
         color: $light-grayish-blue;
-        width: 90%;
+        width: 75%;
         height: 100%;
         margin-top: 0.1rem;
+
+        .item_checked {
+            text-decoration: line-through;
+            text-decoration-color: $dark-grayish-blue;
+            color: $dark-grayish-blue; 
+        }
     }
 
     .light_item_content {
@@ -99,8 +88,21 @@
 }
 
 .cross {
-    margin: 0.1rem 0.5rem 0;
     cursor: pointer;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+
+    button {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        overflow: hidden;
+        outline: none;
+        cursor: pointer;
+    }
 }
 
 .list_info {
@@ -116,10 +118,25 @@
 }
 
 .items_clear {
-    cursor: pointer;
 
-    &:hover {
-        color: $bright-blue;
+    button {
+        cursor: pointer;
+        background: $very-dark-desaturated-blue;
+        color: $dark-grayish-blue; 
+        font-family: "Josefin Sans", sans-serif;
+        font-size: $normal-size;
+        border: none;
+    
+        &:hover {
+            color: $bright-blue;
+        }
+    }
+}
+
+.items_clear {
+
+    .light_items_clear {
+        background: $very-light-gray;
     }
 }
 
