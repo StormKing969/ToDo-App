@@ -69,7 +69,10 @@ app.post("/", function(req, res) {
 
 app.post("/update", function(req, res) {
     const completedItem = req.body.completedItemID;
-    console.log(completedItem)
+    
+    checkItem(completedItem);
+    // When post, save the value in variable then send to the "get"
+    res.redirect("/");
 })
 
 app.post("/delete", function(req, res) {
@@ -98,6 +101,20 @@ function updateItemList(userInput) {
     });
 
     return item;
+}
+
+function checkItem(checkedItemID) {
+    Item.findOneAndUpdate(
+        {_id: checkedItemID}, // Filter
+        {checked: true},      // Updated item
+        function(err, itemsFound) {
+            if(!err) {
+                console.log("Removal was successful");
+            } else {
+                console.log(err);
+            }
+        }
+    );
 }
 
 function deleteItem(item_id) {
