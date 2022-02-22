@@ -15,9 +15,9 @@ const item_content_tag = document.querySelectorAll(".item_content");
 const clear_content_tag = document.querySelector(".items_clear button");
 
 const statues_tag = document.querySelector(".statues");
-const all_link_tag = document.querySelector(".all_link");
-const active_link_tag = document.querySelector(".active_link");
-const completed_link_tag = document.querySelector(".completed_link");
+const all_link_tag = document.querySelectorAll(".all_link");
+const active_link_tag = document.querySelectorAll(".active_link");
+const completed_link_tag = document.querySelectorAll(".completed_link");
 
 function theme() {
     if(theme_btn.src.includes("sun") === true) {
@@ -80,24 +80,45 @@ document.addEventListener('readystatechange', event => {
     // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
     if (event.target.readyState === "complete") {
         if(window.location.pathname === "/") {
-            all_link_tag.classList.add("active");
+            all_link_tag.forEach(item => {
+                item.classList.add("active");
+            })
+            
+            active_link_tag.forEach(item => {
+                item.classList.remove("active");
+            })
 
-            active_link_tag.classList.remove("active");
-            completed_link_tag.classList.remove("active");
+            completed_link_tag.forEach(item => {
+                item.classList.remove("active");
+            })
         } 
 
         if(window.location.pathname === "/active") {
-            active_link_tag.classList.add("active");
+            active_link_tag.forEach(item => {
+                item.classList.add("active");
+            })
 
-            all_link_tag.classList.remove("active");
-            completed_link_tag.classList.remove("active");
+            all_link_tag.forEach(item => {
+                item.classList.remove("active");
+            })
+
+            completed_link_tag.forEach(item => {
+                item.classList.remove("active");
+            })
         }
 
         if(window.location.pathname === "/completed") {
-            completed_link_tag.classList.add("active");
+            completed_link_tag.forEach(item => {
+                item.classList.add("active");
+            })
 
-            all_link_tag.classList.remove("active");
-            active_link_tag.classList.remove("active");
+            all_link_tag.forEach(item => {
+                item.classList.remove("active");
+            })
+
+            active_link_tag.forEach(item => {
+                item.classList.remove("active");
+            })
         }
 
         theme_btn.addEventListener("click", () => {
