@@ -11,7 +11,6 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 - [My process](#my-process)
   - [Built with](#built-with)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -27,18 +26,18 @@ Users should be able to:
 - Delete todos from the list
 - Filter by all/active/complete todos
 - Clear all completed todos
-- Toggle light and dark mode
-- **Bonus**: Drag and drop to reorder items on the list
+- Toggle light and dark mode  --- There is an issue that i'll fix in a later version
+- **Bonus**: Drag and drop to reorder items on the list  --- TO BE COMPLETED
 
 ### Screenshot
 
 #### Desktop View
 
 ##### Desktop View Dark Theme
-![Dark Desktop View]()
+![Dark Desktop View](./screenshots/desktop-dark.png)
 
 ##### Desktop View Light Theme
-![Light Desktop View]()
+![Light Desktop View](./screenshots/desktop-light.png)
 
 #### Mobile View
 
@@ -70,10 +69,6 @@ Users should be able to:
 ### Continued development
 
 While I feel a lot more comfortable using Node JS and MongoDB to store my data. I feel like I should try using them in a lot more complex project to feel like I completely understood the concept.
-
-### Useful resources
-
-- [Custom Checkbox](https://dev.to/kunaal438/checkbox-css-style-gradient-checkbox-with-pure-css-custom-input-css-3gko) - This helped me create the rounded checkbox and also add a linear gradient.
 
 ## Author
 

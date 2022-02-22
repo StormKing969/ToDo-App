@@ -15,10 +15,9 @@ const item_content_tag = document.querySelectorAll(".item_content");
 const clear_content_tag = document.querySelector(".items_clear button");
 
 const statues_tag = document.querySelector(".statues");
-
-theme_btn.addEventListener("click", () => {
-    theme();
-})
+const all_link_tag = document.querySelector(".all_link");
+const active_link_tag = document.querySelector(".active_link");
+const completed_link_tag = document.querySelector(".completed_link");
 
 function theme() {
     if(theme_btn.src.includes("sun") === true) {
@@ -74,3 +73,35 @@ function theme() {
         statues_tag.classList.remove("light_statues"); 
     }
 }
+
+// ==============================================================================
+
+document.addEventListener('readystatechange', event => { 
+    // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
+    if (event.target.readyState === "complete") {
+        if(window.location.pathname === "/") {
+            all_link_tag.classList.add("active");
+
+            active_link_tag.classList.remove("active");
+            completed_link_tag.classList.remove("active");
+        } 
+
+        if(window.location.pathname === "/active") {
+            active_link_tag.classList.add("active");
+
+            all_link_tag.classList.remove("active");
+            completed_link_tag.classList.remove("active");
+        }
+
+        if(window.location.pathname === "/completed") {
+            completed_link_tag.classList.add("active");
+
+            all_link_tag.classList.remove("active");
+            active_link_tag.classList.remove("active");
+        }
+
+        theme_btn.addEventListener("click", () => {
+            theme();
+        })
+    }
+});
