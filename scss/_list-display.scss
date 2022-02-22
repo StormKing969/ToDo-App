@@ -119,10 +119,32 @@
     margin: 1.5rem 0;
     padding: 0 1rem;
     color: $dark-grayish-blue; 
+
+    .items_statues {
+
+        
+    }
 }
 
 .items_statues {
     display: none;
+
+    a {
+        text-decoration: none;
+        color: $dark-grayish-blue; 
+        margin: 0 0.7rem;
+        cursor: pointer;
+
+        &:hover {
+            color: $bright-blue;
+            text-decoration: underline;
+        }
+    }
+
+    .active {
+        color: $bright-blue;
+        text-decoration: underline;
+    }
 }
 
 .items_clear {
@@ -170,11 +192,13 @@
 
             &:hover {
                 color: $bright-blue;
+                text-decoration: underline;
             }
         }
 
         .active {
             color: $bright-blue;
+            text-decoration: underline;
         }
     }
 }

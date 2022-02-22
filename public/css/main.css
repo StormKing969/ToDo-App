@@ -235,6 +235,23 @@
   display: none;
 }
 
+.items_statues a {
+  text-decoration: none;
+  color: #777a92;
+  margin: 0 0.7rem;
+  cursor: pointer;
+}
+
+.items_statues a:hover {
+  color: #3a7bfd;
+  text-decoration: underline;
+}
+
+.items_statues .active {
+  color: #3a7bfd;
+  text-decoration: underline;
+}
+
 .items_clear button {
   cursor: pointer;
   background: #25273c;
@@ -283,10 +300,12 @@
 
 .statues .items_statues a:hover {
   color: #3a7bfd;
+  text-decoration: underline;
 }
 
 .statues .items_statues .active {
   color: #3a7bfd;
+  text-decoration: underline;
 }
 
 .light_statues {

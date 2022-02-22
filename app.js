@@ -63,6 +63,47 @@ app.get("/", function(req, res) {
     setTimeout(displayList, 100)
 })
 
+app.get("/active", function(req, res) {
+    function displayList() {
+        Item.find({checked: false}, function(err, activeitemsFound) {
+            if(!err) {
+                res.render("list", {
+                    itemList: activeitemsFound,
+                    activeItemsLeft: activeitemsFound.length
+                });  
+            } else {
+                return console.log(err);
+            }
+        })    
+    }
+    
+
+    setTimeout(displayList, 100)
+})
+
+app.get("/completed", function(req, res) {
+    function displayList() {
+        Item.find({}, function(err, itemsFound) {
+            if(!err) {
+                Item.find({checked: true}, function(err, completeditemsFound) {
+                    if(!err) {
+                        res.render("list", {
+                            itemList: completeditemsFound,
+                            activeItemsLeft: (itemsFound.length - completeditemsFound.length)
+                        });  
+                    } else {
+                        return console.log(err);
+                    }
+                })
+            } else {
+                console.log(err);
+            }
+        })
+    }
+
+    setTimeout(displayList, 100)
+})
+
 app.post("/", function(req, res) {
     const item = req.body.userInput;
     
