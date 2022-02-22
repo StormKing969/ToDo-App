@@ -274,22 +274,24 @@
   display: block;
 }
 
-.statues .items_statues span {
-  margin: 0 0.5rem;
+.statues .items_statues a {
+  text-decoration: none;
+  color: #777a92;
+  margin: 0 0.7rem;
   cursor: pointer;
 }
 
-.statues .items_statues span:hover {
+.statues .items_statues a:hover {
+  color: #3a7bfd;
+}
+
+.statues .items_statues .active {
   color: #3a7bfd;
 }
 
 .light_statues {
   background: #fafafa;
   color: #484b6a;
-}
-
-.active {
-  color: #3a7bfd;
 }
 
 .drag_drop {
@@ -409,5 +411,14 @@ header img {
 
 header .light_header {
   color: #e4e5f1;
+}
+
+@media only screen and (min-width: 645px) {
+  .statues {
+    display: none;
+  }
+  .items_statues {
+    display: block;
+  }
 }
 /*# sourceMappingURL=main.css.map */
